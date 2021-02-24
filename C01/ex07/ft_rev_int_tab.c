@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaeyolee <yong@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyjeong <hyjeong@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 16:43:02 by jaeyolee          #+#    #+#             */
-/*   Updated: 2021/02/24 11:14:08 by hyjeong          ###   ########.fr       */
+/*   Created: 2021/02/24 15:58:09 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/02/24 16:00:10 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
+	int index;
+	int c;
+	int swap[size];
+
+	c = 0;
+	index = size - 1;
+	while (index >= 0)
+	{
+		swap[c] = tab[index];
+		index--;
+		c++;
+	}
+	c = 0;
+	while (c < size)
+	{
+		tab[c] = swap[c];
+		c++;
+	}
 }
