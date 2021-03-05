@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyjeong <hyjeong@42student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 03:08:50 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/03 22:06:22 by hyjeong          ###   ########.fr       */
+/*   Created: 2021/03/05 17:19:17 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/03/05 17:25:37 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	char *copy;
-	unsigned int i;
+#include <unistd.h>
 
-	i = 0;
-	copy = dest;
-	while (*dest)
-		dest++;
-	while (i < nb && *src != 0)
+int checkbase(char *base)
+{
+	char check[128];
+
+	while (*base != 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		i++;
+		if (*base == '-' || *base == '+')
+			return (1);
+		if (check[*base] == 1)
+		       return (1);
+		else if
+			check[*base] = 1;
+		base++;	
 	}
-	*dest = 0;
-	return (copy);
+}
+void	ft_putnbr_base(int nbr, char *base)
+{
 }

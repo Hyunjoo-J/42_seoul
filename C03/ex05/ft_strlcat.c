@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyjeong <hyjeong@42student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 03:08:50 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/03 22:06:22 by hyjeong          ###   ########.fr       */
+/*   Created: 2021/03/04 14:21:46 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/03/04 14:40:15 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	char *copy;
 	unsigned int i;
 
 	i = 0;
-	copy = dest;
-	while (*dest)
-		dest++;
-	while (i < nb && *src != 0)
+	while (*dest && i < size)
+	{
+		++i;
+		++dest;
+	}
+	while (*src && i + 1 < size)
 	{
 		*dest = *src;
-		dest++;
-		src++;
-		i++;
+		++dest;
+		++src;
+		++i;
 	}
-	*dest = 0;
-	return (copy);
+	if (i < size)
+		*dest = 0;
+	while (*src)
+	{
+		++i;
+		++src;
+	}
+	return (i);
 }

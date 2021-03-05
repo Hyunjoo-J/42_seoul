@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyjeong <hyjeong@42student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 03:08:50 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/03 22:06:22 by hyjeong          ###   ########.fr       */
+/*   Created: 2021/03/04 14:49:10 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/03/04 14:50:19 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	char *copy;
-	unsigned int i;
+#include <unistd.h>
 
-	i = 0;
-	copy = dest;
-	while (*dest)
-		dest++;
-	while (i < nb && *src != 0)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str != 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		i++;
+		ft_putchar(*str);
+		str++;
 	}
-	*dest = 0;
-	return (copy);
 }

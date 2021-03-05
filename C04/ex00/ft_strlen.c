@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyjeong <hyjeong@42student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 03:08:50 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/03 22:06:22 by hyjeong          ###   ########.fr       */
+/*   Created: 2021/03/04 14:46:30 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/03/04 14:47:38 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_strlen(char *str)
 {
-	char *copy;
-	unsigned int i;
+	int count;
 
-	i = 0;
-	copy = dest;
-	while (*dest)
-		dest++;
-	while (i < nb && *src != 0)
+	count = 0;
+	while (*str != 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		i++;
+		str++;
+		count++;
 	}
-	*dest = 0;
-	return (copy);
+	return (count);
 }

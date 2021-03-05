@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyjeong <hyjeong@42student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 03:08:50 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/03 22:06:22 by hyjeong          ###   ########.fr       */
+/*   Created: 2021/03/04 14:53:45 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/03/04 14:54:40 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	char *copy;
-	unsigned int i;
+#include <unistd.h>
 
-	i = 0;
-	copy = dest;
-	while (*dest)
-		dest++;
-	while (i < nb && *src != 0)
+void	rec(int nb)
+{
+	char num;
+
+	if (nb == 0)
+		return ;
+	rec(nb / 10);
+	num = nb % 10 + '0';
+	write(1, &num, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	char num;
+
+	if (nb < 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		i++;
+		write(1, "-", 1);
+		rec(-(nb / 10));
+		num = '0' - nb % 10;
 	}
-	*dest = 0;
-	return (copy);
+	else
+	{
+		rec(nb / 10);
+		num = '0' + nb % 10;
+	}
+	write(1, &num, 1);
 }
