@@ -6,7 +6,7 @@
 /*   By: hyjeong <hyjeong@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:18:59 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/02/22 20:45:04 by hyjeong          ###   ########.fr       */
+/*   Updated: 2021/02/23 02:13:26 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,15 @@ void	ft_print_comb2(void)
 	int b;
 
 	a = 0;
+	b = 1;
 	while (a < 98)
 	{
 		b = a + 1;
-		print_num(a, b);
+		while (b <= 99)
+		{
+			print_num(a, b);
+			b++;
+		}
 		a++;
 	}
 	write(1, "98 99", 5);
