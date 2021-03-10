@@ -6,15 +6,15 @@
 /*   By: hyjeong <hyjeong@42student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 16:13:51 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/05 18:25:13 by hyjeong          ###   ########.fr       */
+/*   Updated: 2021/03/10 15:17:17 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	space(char *str)
 {
-	if (*str == ' ' || *str == '\f' || *str == '\n')
+	if (*str == 32)
 		return (1);
-	else if (*str == '\r' || *str == '\t' || *str == '\v')
+	else if (*str >= 9 && *str <= 13)
 		return (1);
 	return (0);
 }
@@ -40,7 +40,7 @@ int	ft_atoi(char *str)
 		num += *str - '0';
 		str++;
 	}
-	if (minus == 1)
+	if (minus % 2)
 		num *= -1;
 	return (num);
 }
