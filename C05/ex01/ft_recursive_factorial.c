@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyjeong <hyjeong@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/11 17:37:09 by hyjeong           #+#    #+#             */
+/*   Updated: 2021/03/11 20:49:51 by hyjeong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0)
@@ -6,5 +18,5 @@ int	ft_recursive_factorial(int nb)
 		return (1);
 	if (nb == 1)
 		return (1);
-	return (nb * ft_recursive_factorial(nb - 1);
+	return (nb * ft_recursive_factorial(nb - 1));
 }
