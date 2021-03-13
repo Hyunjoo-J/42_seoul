@@ -6,7 +6,7 @@
 /*   By: hyjeong <hyjeong@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:59:34 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/13 16:04:12 by hyjeong          ###   ########.fr       */
+/*   Updated: 2021/03/13 18:24:44 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_putchar(char *str)
 
 int		main(int argc, char **argv)
 {
-	int idx;
-	int rep;
-	char *temp;
+	int		idx;
+	int		rep;
+	char	*temp;
 
 	idx = 0;
 	rep = 0;
