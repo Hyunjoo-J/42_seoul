@@ -6,7 +6,7 @@
 /*   By: hyjeong <hyjeong@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 16:14:40 by hyjeong           #+#    #+#             */
-/*   Updated: 2021/03/13 22:34:06 by hyjeong          ###   ########.fr       */
+/*   Updated: 2021/03/15 16:36:17 by hyjeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ int		ft_strlen(char *src)
 		count++;
 	return (count);
 }
+
 char	*ft_strdup(char *src)
 {
-	char	*pArr;
+	char	*ptr;
 	int		idx;
 
 	idx = 0;
-	pArr = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
-	if (!pArr)
+	ptr = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (!ptr)
 		return (NULL);
 	while (src[idx])
 	{
-		pArr[idx] = src[idx];
+		ptr[idx] = src[idx];
 		idx++;
 	}
-	pArr[idx] = 0;
-	return (pArr);
+	ptr[idx] = 0;
+	return (ptr);
 }
